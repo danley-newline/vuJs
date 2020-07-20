@@ -1,9 +1,11 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Monster Slayer</title>
+    <title>Combat sport</title>
     <script src="https://npmcdn.com/vue/dist/vue.js"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link rel="stylesheet" href="css/foundation.min.css">
+    <link rel="stylesheet" href="css/back.css">
     <link rel="stylesheet" href="css/app.css">
 
 </head>
@@ -11,7 +13,7 @@
 <div id="app">
     <section class="row">
         <div class="small-6 columns play1">
-            <h1 class="text-center">Joueur 1</h1>
+            <h1 class="text-center">Mlle Conflit</h1>
             <div class="healthbar">
                 <div 
                     class="healthbar text-center" 
@@ -22,7 +24,7 @@
             </div>
         </div>
         <div class="small-6 columns play2">
-            <h1 class="text-center">Ordinateur</h1>
+            <h1 class="text-center">Mr Haine</h1>
             <div class="healthbar">
                 <div 
                     class="healthbar text-center" 
@@ -49,6 +51,7 @@
             <button id="give-up" @click="giveUp">GIVE UP</button>
         </div>
     </section>
+    
     <section class="row log" v-if="turns.length > 0">
         <div class="small-12 columns">
             <ul>
@@ -59,9 +62,25 @@
             </ul>
         </div>
     </section>
-</div>
-        <script src="css/vue.js"></script>
-        <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 
+    <div class="text-center" v-if="!gameIsRunning">
+        <div class="img mb-2" data-aos="fade-down"><img width="500px" src="image/win.jpg" alt=""></div>
+        <div class="img mb-2" data-aos="fade-in" data-aos-duration="3000"><img width="500px" src="image/lost.png" alt=""></div>
+    </div>
+    
+    <div class="text-center" v-else>
+        <div class="img mb-2" data-aos="flip-left" data-aos-duration="3000"><img width="500px" src="image/lost.png" alt=""></div>
+        <div class="img mb-2" data-aos="flip-up" data-aos-duration="3000"><img width="500px" src="image/win.jpg" alt=""></div>
+
+    </div>
+</div>
+        <script src="js/vue.js"></script>
+        <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+        <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+        <script>
+            AOS.init({
+                
+            });
+        </script>
 </body>
 </html>
