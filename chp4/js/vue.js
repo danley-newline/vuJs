@@ -83,7 +83,7 @@ new Vue({
                 swal("Attention!", "Vous n'avez plus de trousse!", "warning");
                 this.hideSoin = true;
             }
-            this.monsterAttack(5, 30);
+            this.monsterAttack(3, 10);
         },
         giveUp: function(){
             this.gameIsRunning = false;
