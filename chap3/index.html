@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <title>Vue js</title>
+    
+</head>
+<body>
+    <div class="container text-center font-weight-bold">
+
+    
+   <div id="app">
+
+       <!--
+        <p v-if="show">You can see me!</p>
+        <p v-else>pourquoi u click sur le bouton</p>
+        <p>I also see you !</p>
+        <button @click="show = !show">swith</button>
+        -->
+        <ul>
+            <li v-for="(ingredient, i) in ingredients" :key="ingredient">{{ ingredient }} ({{ i }})</li>
+        </ul>
+        <hr>
+            <ul>
+                <li v-for="person in personne">
+                    <div v-for="(value, key, index) in person">{{ key }}: {{ value }} ({{ index }})</div>
+                </li>
+            </ul>
+        <hr>
+            <span v-for="n in 10"> {{ n }} </span>
+        <hr>
+        <template v-for="(ingredient, index) in ingredients">
+            <h1>{{ ingredient }}</h1>
+            <p>{{ index }}</p>
+        </template>
+        <button @click="ingredients.push('spicies')" > add element</button>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="vue.js"></script>
+    </div>
+</body>
+</html>

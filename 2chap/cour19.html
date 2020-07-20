@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        <button v-on:click="increase(2, $event)">Click me</button>
+        <button v-on:click="counter++">Click me</button>
+        <p>{{ counter * 2 > 10 ? 'superieur a 10' : 'inferieur a 10'}}</p>
+
+        <p v-on:mousemove="updateCor"> Coordinates: {{ x }} / {{ y }}  -
+             <span v-on:mousemove.stop>Fin coord</span></p>
+
+        <input type="text" v-on:keyup.enter.space="alertMe">
+
+        <input type="text" v-model="name">
+        <p>{{  name }}</p>
+
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="vue.js"></script>
+</body>
+</html>
